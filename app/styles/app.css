@@ -1,0 +1,30 @@
+fieldset {
+  border: none;
+}
+
+body {
+  font-size: 16px;
+  text-align: center;
+}
+
+main {
+  margin: 5rem auto;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+input#email, input#amount {
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-family: sans-serif;
+}
+
+input#email {
+  width: 300px;
+}
+
+input#amount {
+  width: 100px;
+}

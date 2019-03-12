@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('mastodon', function() {
+    this.route('signup');
+  });
 });
 
 export default Router;
