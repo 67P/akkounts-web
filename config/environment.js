@@ -20,7 +20,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    apiBaseUrl: 'http://localhost:3200'
   };
 
   if (environment === 'development') {
@@ -44,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.apiBaseUrl = 'https://api.accounts.kosmos.org';
   }
 
   return ENV;

@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { isEmpty, isPresent } from '@ember/utils';
+import config from 'akkounts-web/config/environment';
 
 export default Controller.extend({
 
@@ -18,7 +19,7 @@ export default Controller.extend({
     this._super(...arguments)
 
     window.btcpay.onModalWillLeave(() => {
-      fetch(`http://localhost:3200/accounts/mastodon/invoices/${this.invoiceId}`, {
+      fetch(`${config.apiBaseUrl}/accounts/mastodon/invoices/${this.invoiceId}`, {
         headers:{ 'Content-Type': 'application/json' }
       }).then(res => res.json())
         .then(invoice => {
@@ -57,7 +58,7 @@ export default Controller.extend({
         return window.btcpay.showInvoice(this.invoiceId);
       }
 
-      fetch('http://localhost:3200/accounts/mastodon/invoices', {
+      fetch(`${config.apiBaseUrl}/accounts/mastodon/invoices`, {
         method: 'POST',
         body: JSON.stringify({
           email: this.emailAddress,
