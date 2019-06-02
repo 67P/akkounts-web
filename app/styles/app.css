@@ -1,18 +1,91 @@
-fieldset {
-  border: none;
+h1, h2, ul, li, p {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-size: 16px;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Abel, sans-serif;
+  font-size: 18px;
+  text-rendering: optimizeLegibility;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 38.2% 61.8%;
+  grid-template-rows: 10rem 1fr;
+  grid-template-areas: "A C" "B C";
+  height: 100vh;
+}
+
+header.site {
+  grid-area: A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgb(137,85,160);
+  background: linear-gradient(35deg, rgba(137,85,160,1) 0%, rgba(13,79,153,1) 100%);
+  color: white;
+}
+
+header.site h1 {
+  flex: 1;
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+nav.site {
+  grid-area: B;
+  padding: 2rem 0;
+  background-color: #222;
+  color: #ccc;
+}
+
+nav.site header {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+nav.site ul {
+  list-style: none;
+}
+
+nav.site ul li > a {
+  display: block;
+  padding: 2rem 2rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav.site ul li > a:hover,
+nav.site ul li > a.active {
+  background-color: #333;
 }
 
 main {
-  margin: 5rem auto;
+  grid-area: C;
+  grid-row: span 2 / auto;
+  /* margin: 5rem auto; */
+  background-color: white;
+  text-align: center;
 }
 
-p {
+main h2 {
+  margin-bottom: 4rem;
+}
+
+main p {
   margin-bottom: 2rem;
+}
+
+fieldset {
+  border: none;
 }
 
 input#email, input#amount {

@@ -1,3 +1,55 @@
-<main>
-  {{outlet}}
-</main>
+<div id="grid-container">
+  <header class="site">
+    <h1>
+      <span class="project-name">Kosmos</span>
+      <span class="site-name">Services</span>
+    </h1>
+  </header>
+
+  <nav class="site">
+    <ul>
+      <li>
+        {{#link-to "mastodon.signup"}}
+          <header>
+            <span class="domain-name">kosmos.social</span>
+            <span class="product-name">(Mastodon)</span>
+          </header>
+          <p class="description">
+            A social network server that is part of the fediverse, a decentralized
+            alternative to Twitter etc.
+          </p>
+        {{/link-to}}
+      </li>
+      <li class="coming-soon">
+        <a href="#">
+          <header>
+            <span class="domain-name">xmpp.kosmos.org</span>:
+            <span class="product-name">(ejabberd)</span>
+          </header>
+          <p class="description">
+            Chat rooms and instant messaging, based on a widely used open protocol.
+            A decentralized alternative to Slack, Telegram, Signal, etc.
+          </p>
+        </a>
+      </li>
+      <li class="coming-soon">
+        <a href="#">
+          <header>
+            <span class="domain-name">gitea.kosmos.org</span>:
+            <span class="product-name">(Gitea)</span>
+          </header>
+          <p class="description">
+            Code hosting and collaboration for software projects. A free and open
+            alternative to GitHub, GitLab, etc.
+          </p>
+        </a>
+      </li>
+      <li>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    {{outlet}}
+  </main>
+</div>
