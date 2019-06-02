@@ -1,46 +1,48 @@
-{{#if invoiceNotCreated}}
-  <form {{action "createInvoice" on="submit"}}>
-    <fieldset>
-      <p>
-        <label for="email">Tell us an email address, where we can send the invite:</label>
+<section id="mastodon-signup">
+  {{#if invoiceNotCreated}}
+    <form {{action "createInvoice" on="submit"}}>
+      <fieldset>
+        <p>
+          <label for="email">Tell us an email address, where we can send the invite:</label>
+        </p>
+        <p>
+          {{input type="email" value=emailAddress id="email" class=emailInvalidClass}}
+        </p>
+      </fieldset>
+      <fieldset>
+        <p>
+          <label for="amount">Select your donation amount:</label>
+        </p>
+        <p>
+          {{input type="number" value=amount id="amount"}} USD
+        </p>
+      </fieldset>
+      <p class="actions">
+        <input type="submit" value="continue to payment">
       </p>
-      <p>
-        {{input type="email" value=emailAddress id="email"}}
-      </p>
-    </fieldset>
-    <fieldset>
-      <p>
-        <label for="amount">Select your donation amount:</label>
-      </p>
-      <p>
-        {{input type="number" value=amount id="amount"}} USD
-      </p>
-    </fieldset>
-    <p>
-      <input type="submit" value="continue to payment">
-    </p>
-  </form>
-{{/if}}
+    </form>
+  {{/if}}
 
-{{#if invoiceUnpaid}}
-  <p>
-    Waiting for donation payment to be completed
-  </p>
-  <form {{action "createInvoice" on="submit"}}>
+  {{#if invoiceUnpaid}}
     <p>
-      <input type="submit" value="re-open payment dialog">
+      Waiting for donation payment to be completed
     </p>
-  </form>
-{{/if}}
+    <form {{action "createInvoice" on="submit"}}>
+      <p class="actions">
+        <input type="submit" value="re-open payment dialog">
+      </p>
+    </form>
+  {{/if}}
 
-{{#if invoicePaid}}
-  <p>
-    Thanks for your donation!
-  </p>
-  <p>
-    An invite link is on the way to {{emailAddress}}.
-  </p>
-  <p>
-    <img src="/img/youre-awesome.gif" alt="Carl Sagan says: you're awesome.">
-  </p>
-{{/if}}
+  {{#if invoicePaid}}
+    <p>
+      <strong>An invite link is on the way to <span class="email">{{emailAddress}}</span>!</strong>
+    </p>
+    <p>
+      Thanks for your donation!
+    </p>
+    <p>
+      <img src="/img/youre-awesome.gif" alt="Carl Sagan says: you're awesome.">
+    </p>
+  {{/if}}
+</section>

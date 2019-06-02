@@ -9,6 +9,10 @@ export default Controller.extend({
   currency: 'USD',
   invoiceId: null,
   invoiceStatus: null,
+  emailInvalid: null,
+  emailInvalidClass: computed('emailInvalid', function() {
+    return this.emailInvalid ? 'invalid' : '';
+  }),
 
   init () {
     this._super(...arguments)
@@ -41,7 +45,13 @@ export default Controller.extend({
 
     createInvoice () {
       const amount = parseFloat(this.amount);
-      // TODO validate input
+
+      if (isEmpty(this.emailAddress)) {
+        this.set('emailInvalid', true);
+        return false;
+      } else {
+        this.set('emailInvalid', false);
+      }
 
       if (isPresent(this.invoiceId)) {
         return window.btcpay.showInvoice(this.invoiceId);
