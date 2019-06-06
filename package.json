@@ -2,10 +2,10 @@
   "name": "akkounts-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Small description for akkounts-web goes here",
-  "repository": "",
+  "description": "Web UI for Kosmos account sign-ups and donations",
+  "repository": "https://github.com/67P/akkounts-web.git",
   "license": "AGPL",
-  "author": "",
+  "author": "Kosmos Developers",
   "directories": {
     "doc": "doc",
     "test": "tests"
