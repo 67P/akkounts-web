@@ -12,6 +12,9 @@
   },
   "scripts": {
     "build": "ember build",
+    "build-prod": "rm -rf dist/* && ember build -prod --output-path release",
+    "preversion": "npm test",
+    "version": "npm run build-prod && git add release/",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
