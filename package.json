@@ -15,6 +15,7 @@
     "build-prod": "rm -rf dist/* && ember build -prod --output-path release",
     "preversion": "npm test",
     "version": "npm run build-prod && git add release/",
+    "deploy": "git push 5apps master",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
