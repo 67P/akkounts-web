@@ -10,18 +10,18 @@
   -webkit-tap-highlight-color: transparent;
 }
 button::-moz-focus-inner,
-input[type=submit]::-moz-focus-inner {
+input[type=submit]::-moz-focus-inner,
+.button::-moz-focus-inner {
   border: 0;
 }
 
 body {
-  font-size: 16px;
   margin: 0;
   padding: 0;
-  background-color: #222;
   font-family: Abel, sans-serif;
   font-size: 18px;
   text-rendering: optimizeLegibility;
+  background-color: #222;
 }
 
 header.site {
@@ -32,86 +32,113 @@ header.site {
   background: rgb(137,85,160);
   background: linear-gradient(35deg, rgba(137,85,160,1) 0%, rgba(13,79,153,1) 100%);
   color: white;
-}
 
-header.site h1 {
-  flex: 1;
-  font-family: Raleway, sans-serif;
-  font-weight: 300;
-  font-size: 2rem;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-}
+  h1 {
+    flex: 1;
+    font-family: Raleway, sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
 
-header.site span.beta {
-  font-size: 0.5em;
-  font-style: italic;
-  text-transform: none;
-  vertical-align: super;
-}
+  span.beta {
+    font-size: 0.5em;
+    font-style: italic;
+    text-transform: none;
+    vertical-align: super;
+  }
 
-header.site span.bolt {
-  color: #ffd000;
-}
+  span.bolt {
+    color: #ffd000;
+  }
 
-header.site a {
-  color: inherit;
-  text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 nav.site {
   padding: 2rem 0;
   background-color: #222;
   color: #ccc;
-}
 
-nav.site header {
-  margin-bottom: 1rem;
-  color: white;
-}
+  header {
+    margin-bottom: 1rem;
+    color: white;
+  }
 
-nav.site ul {
-  list-style: none;
-}
+  ul {
+    list-style: none;
+  }
 
-nav.site ul li > a {
-  display: block;
-  padding: 2rem 2rem;
-  text-decoration: none;
-  color: inherit;
-}
+  ul li > a {
+    display: block;
+    padding: 2rem 2rem;
+    text-decoration: none;
+    color: inherit;
+  }
 
-nav.site ul li > a:hover,
-nav.site ul li > a.active {
-  background-color: #333;
+  ul li > a:hover,
+  ul li > a.active {
+    background-color: #333;
+  }
 }
 
 main {
   background-color: white;
   text-align: center;
   padding: 4rem 2rem;
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  p.actions {
+    padding: 3rem 0 2rem;
+  }
+
+  span.email {
+    background-color: lightyellow;
+  }
 }
 
-main h2 {
-  font-size: 2rem;
-  font-family: Raleway, sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 4rem;
+.hero {
+  // height: 160px;
+  // margin: -4rem -4rem 0 -4rem;
+
+  // background-color: #efefef;
+  // background-image: url(/img/mars.jpg);
+  // background-size: cover;
+  // background-position: center;
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+
+
+  h2 {
+    font-size: 2rem;
+    font-family: Raleway, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 0.6em;
+    // color: #26a07a;
+
+    .service {
+      font-weight: 600;
+      // color: rgba(13,79,153,1);
+    }
+  }
+
+  p.byline {
+    // display: none;
+    // color: #888;
+  }
 }
 
-main p {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-}
-
-main p.actions {
-  padding: 3rem 0 2rem;
-}
-
-main span.email {
-  background-color: lightyellow;
-}
 
 fieldset {
   border: none;
@@ -131,27 +158,30 @@ input#amount {
   width: 100px;
 }
 
-input[type=submit] {
+input[type=submit], a.button {
   margin: 0;
   padding: 1rem 2rem;
   background: transparent;
-  /* background: rgba(13,79,153,1); */
+  text-decoration: none;
   background: linear-gradient(35deg, rgba(13,79,153,1) 0%, #26a07a 100%);
+  color: white;
   border: none;
   border-radius: 5px;
-  color: white;
-  /* color: rgba(13,79,153,1); */
+  font-family: sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
-}
+  cursor: pointer;
+  /* background: rgba(13,79,153,1); */
+  /* color: rgba(13,79,153,1); */
 
-input[type=submit]:hover,
-input[type=submit]:focus {
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
-}
-input[type=submit]:active {
-  box-shadow: none;
-  transform: translate(1px, 2px);
+  &:hover, &:focus {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translate(1px, 2px);
+  }
 }
 
 input.invalid {
