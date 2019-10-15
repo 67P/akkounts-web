@@ -1,15 +1,22 @@
 <div id="grid-container">
   <header class="site">
     <h1>
-      <span class="project-name">Kosmos</span>
-      <span class="site-name">Services</span>
+      {{#link-to "index"}}
+        <span class="project-name">Kosmos</span>
+        <span class="site-name">Services</span>
+        <span class="beta"><span class="bolt">🗲</span> beta</span>
+      {{/link-to}}
     </h1>
   </header>
+
+  <main>
+    {{outlet}}
+  </main>
 
   <nav class="site">
     <ul>
       <li>
-        {{#link-to "mastodon.signup"}}
+        {{#link-to "mastodon"}}
           <header>
             <span class="domain-name">kosmos.social</span>
             <span class="product-name">(Mastodon)</span>
@@ -48,8 +55,4 @@
       </li>
     </ul>
   </nav>
-
-  <main>
-    {{outlet}}
-  </main>
 </div>
