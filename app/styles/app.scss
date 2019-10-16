@@ -19,7 +19,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Abel, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   text-rendering: optimizeLegibility;
 }
 
@@ -256,6 +256,10 @@ input.invalid {
 }
 
 @media (min-width: 460px) {
+  html, body {
+    font-size: 16px;
+  }
+
   main {
     .explainer {
       margin-bottom: 4rem;
