@@ -122,6 +122,16 @@ main {
     p {
       font-size: 1.2rem;
       text-align: left;
+
+      &.illustration {
+        margin-bottom: 1rem;
+        text-align: center;
+
+        img {
+          height: 6rem;
+          width: auto;
+        }
+      }
     }
   }
 }
