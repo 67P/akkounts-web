@@ -119,7 +119,7 @@ main {
   }
 
   .explainer {
-    margin: 0 auto 3rem auto;
+    margin: 0 auto;
 
     > div {
       display: grid;
@@ -262,7 +262,6 @@ input.invalid {
 
   main {
     .explainer {
-      margin-bottom: 4rem;
 
       > div {
         display: grid;
@@ -295,7 +294,7 @@ input.invalid {
     grid-template-columns: 38.2% 61.8%;
     grid-template-rows: 10rem 1fr;
     grid-template-areas: "A C" "B C";
-    height: 100vh;
+    min-height: 100vh;
   }
 
   header.site {
@@ -313,12 +312,10 @@ input.invalid {
   main {
     grid-area: C;
     grid-row: span 2 / auto;
-    overflow: auto;
     padding: 4rem 4rem;
 
     .explainer {
       max-width: 80%;
-      margin-bottom: 10rem;
     }
   }
 }
