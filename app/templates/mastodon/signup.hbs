@@ -1,3 +1,7 @@
+<div class="hero">
+  <h2>Sign up</h2>
+</div>
+
 <section id="mastodon-signup">
   {{#if invoiceNotCreated}}
     <form {{action "createInvoice" on="submit"}}>
@@ -6,12 +10,16 @@
           <label for="email">Tell us an email address, where we can send the invite:</label>
         </p>
         <p>
-          {{input type="email" value=emailAddress id="email" class=emailInvalidClass}}
+          {{input type="email"
+                  value=emailAddress
+                  id="email"
+                  class=emailInvalidClass
+                  placeholder="user@provider.com"}}
         </p>
       </fieldset>
       <fieldset>
         <p>
-          <label for="amount">Select your donation amount:</label>
+          <label for="amount">Select your donation for the first year:</label>
         </p>
         <p>
           {{input type="number" value=amount id="amount"}} USD
