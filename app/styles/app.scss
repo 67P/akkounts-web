@@ -108,10 +108,16 @@ main {
     font-size: 1.4rem;
     line-height: 1.4em;
     margin-bottom: 2rem;
-  }
 
-  p.actions {
-    padding: 3rem 0 2rem;
+    // &.illustration {
+    //   img {
+    //     height: 14rem;
+    //   }
+    // }
+
+    &.actions {
+      padding: 3rem 0 2rem;
+    }
   }
 
   span.email {
